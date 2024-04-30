@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module05Forms.PersonalInfoPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White" Padding="30">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Personal Information Form" HorizontalOptions="Center" FontSize="25" FontAttributes="Bold" TextColor="Black"  Grid.Row="0" Grid.ColumnSpan="2"/>
+
+                <Switch x:Name="actionSwitch" IsToggled="True" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Grid.Row="2" Grid.Column="1">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonState">
+                            <VisualState x:Name="Off">
+                                <VisualState.Setters>
+                                    <Setter Property="ThumbColor"
+                                            Value="Red"/>
+                                    <Setter Property="OnColor"
+                                            Value="#ECECEC"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="On">
+                                <VisualState.Setters>
+                                    <Setter Property="ThumbColor"
+                                            Value="#00c04b"/>
+                                    <Setter Property="OnColor"
+                                            Value="#ECECEC"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Switch>
+
+                <Entry VerticalOptions="CenterAndExpand" Placeholder="First Name" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" PlaceholderColor="Black"/>
+
+                <Entry IsEnabled="False" VerticalOptions="CenterAndExpand" Placeholder="Middle Name" Grid.Row="2" Grid.Column="0" PlaceholderColor="Black">
+                    <Entry.Triggers>
+                        <DataTrigger TargetType="Entry"
+                                     Binding="{Binding Source={x:Reference actionSwitch}, Path=IsToggled}" Value="true">
+                            <Setter Property="IsEnabled"
+                                    Value="True"/>
+                        </DataTrigger>
+                    </Entry.Triggers>
+                </Entry>
+
+                <Entry VerticalOptions="CenterAndExpand" Placeholder="Last Name" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" PlaceholderColor="Black"/>
+
+
+                <Picker Title="Gender" TitleColor="Black" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Male</x:String>
+                            <x:String>Female</x:String>
+                            <x:String>Other</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Label Text="Birthdate:" FontAttributes="Bold" TextColor="Black" Grid.Row="5" Grid.Column="0"/>
+
+                <DatePicker Format="d" DateSelected="OnDateSelected" x:Name="birthDatePicker" Grid.Row="6" Grid.Column="0"/>
+
+                <Label Text="Age:" FontAttributes="Bold" TextColor="Black" Grid.Row="5" Grid.Column="1"/>
+
+                <Label x:Name="result" FontAttributes="Bold" FontSize="Large" TextColor="Black" Grid.Row="6" Grid.Column="1"/>
+                
+            </Grid>
+
+            <Entry Placeholder="Address" TextColor="Black" PlaceholderColor="Black"/>
+
+            <Entry Placeholder="Contact Number" Keyboard="Telephone" TextColor="Black" PlaceholderColor="Black"/>
+
+            <Entry Placeholder="Email" Keyboard="Email" TextColor="Black" PlaceholderColor="Black"/>
+
+            <Entry Placeholder="Username" TextColor="Black" PlaceholderColor="Black"/>
+
+            <Entry Placeholder="Password" IsPassword="True" TextColor="Black" PlaceholderColor="Black"/>
+
+            <Entry Placeholder="Repeat Password" IsPassword="True" TextColor="Black" PlaceholderColor="Black"/>
+
+            <Button Text="Submit" TextColor="Black" CornerRadius="30" BackgroundColor="Transparent" BorderWidth="1" BorderColor="Black"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
