@@ -11,7 +11,7 @@
 
 ## Enabled and Disabled
 ![Personal Info Page](Module05Exercise01Pictures/Filled.png)
-![Personal Info Page](Module05Exercise01Pictures/Disabled.png)
+![Personal Info Page](Module05Exercise01Pictures/Disabled.PNG)
 
 ## Telephone
 ![Personal Info Page](Module05Exercise01Pictures/Phone.png)
