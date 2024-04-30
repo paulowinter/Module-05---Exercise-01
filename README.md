@@ -1,8 +1,8 @@
 # Module05Forms
 
 ## Personal Info Page
-[PersonalInfoPage.xaml](Module-05---Exercise-01/PersonalInfoPage.xaml)
-[PersonalInfoPage.xaml.cs](Module-05---Exercise-01/PersonalInfoPage.xaml.cs)
+[PersonalInfoPage.xaml](Module05Forms/Module05Forms/PersonalInfoPage.xaml)
+[PersonalInfoPage.xaml.cs](Module05Forms/Module05Forms/PersonalInfoPage.xaml.cs)
 
 
 ## Filled and Unfilled
