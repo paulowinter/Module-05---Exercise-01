@@ -1,6 +1,6 @@
 # Module05Forms
 
-## PersonalInfoPage
+## Personal Info Page
 [PersonalInfoPage.xaml](Module-05---Exercise-01/PersonalInfoPage.xaml)
 [PersonalInfoPage.xaml.cs](Module-05---Exercise-01/PersonalInfoPage.xaml.cs)
 
